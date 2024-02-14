@@ -1,0 +1,29 @@
+<form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
+    <h1>Crear nuevo vendedor</h1>
+  <label>
+    ID:
+    <input type="text" formControlName="id" />
+  </label>
+  <label>
+    Nombre:
+    <input type="text" formControlName="name" />
+  </label>
+  <label>
+    Categoría:
+    <input type="text" formControlName="category" />
+  </label>
+  <label>
+    Dirección:
+    <input type="text" formControlName="address" />
+  </label>
+  <label>
+    Foto:
+    <input type="text" formControlName="photo" />
+  </label>
+  <label>
+    Vehículo:
+    <input type="text" formControlName="vehicle" />
+  </label>
+  <button type="submit">Crear</button>
+  <button class="cancel-button" (click)="closeModal()">Cancelar</button>
+</form>

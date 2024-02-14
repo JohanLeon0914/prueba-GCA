@@ -39,7 +39,6 @@ export class MapComponent implements AfterViewInit {
   </div>
 `);
       // Actualizar el centro del mapa cuando cambien las coordenadas
-      console.log(this.coordinatesSvc.sellerSelected)
       map.setCenter([this.coordinatesSvc.sellerSelected.coordinates.longitude, this.coordinatesSvc.sellerSelected.coordinates.latitude]);
       //Create the Marker
       let el = document.createElement('div');

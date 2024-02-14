@@ -4,6 +4,7 @@ import { SellerModel } from '../../types/Seller';
 import { CommonModule } from '@angular/common';
 import { EventEmitter } from 'stream';
 import { CoordinatesService } from '../../services/coordinates.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-sellers',
@@ -16,7 +17,7 @@ export class SellersComponent {
 
   sellers: SellerModel[];
 
-  constructor(private sellersService: SellersService, private coordinatesService: CoordinatesService) {
+  constructor(private sellersService: SellersService, private coordinatesService: CoordinatesService, private modalSvc: ModalService) {
   }
 
   ngOnInit(): void {
@@ -33,6 +34,10 @@ export class SellersComponent {
 
   sendCoordinates(seller: SellerModel): void {
     this.coordinatesService.setCoordinates(seller);
+  }
+
+  createModal(): void {
+    this.modalSvc.changeModalState();
   }
   
 }

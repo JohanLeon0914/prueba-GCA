@@ -3,8 +3,8 @@ export interface SellerModel {
     name: string;
     category: string;
     address: string;
-    isActive: boolean;
-    coordinates: CoordinatesModel;
+    isActive?: boolean;
+    coordinates?: CoordinatesModel;
     photo: string;
     vehicle: string;
   }

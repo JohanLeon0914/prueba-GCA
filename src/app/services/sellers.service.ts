@@ -15,4 +15,8 @@ export class SellersService {
     return this.http.get<any[]>(`${this.baseUrl}/salesman`);
   }
 
+  createSalesman(seller: SellerModel): Observable<SellerModel> {
+    return this.http.post<any>(`${this.baseUrl}/salesman`, seller);
+  }
+
 }
