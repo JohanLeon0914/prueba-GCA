@@ -1,8 +1,8 @@
 <nav class="menu">
     <ul>
-      <li (click)="onChangeMenuItemSelect('home')">HOME</li>
-      <li (click)="onChangeMenuItemSelect('page1')">PAGE 1</li>
-      <li (click)="onChangeMenuItemSelect('page2')">PAGE 2</li>
-      <li (click)="onChangeMenuItemSelect('page3')">PAGE 3</li>
+      <li [ngClass]="{'selected-item': selectectItem === 'home'}" (click)="onChangeMenuItemSelect('home')">HOME</li>
+      <li [ngClass]="{'selected-item': selectectItem === 'page1'}" (click)="onChangeMenuItemSelect('page1')">PAGE 1</li>
+      <li [ngClass]="{'selected-item': selectectItem === 'page2'}" (click)="onChangeMenuItemSelect('page2')">PAGE 2</li>
+      <li [ngClass]="{'selected-item': selectectItem === 'page3'}" (click)="onChangeMenuItemSelect('page3')">PAGE 3</li>
     </ul>
   </nav>

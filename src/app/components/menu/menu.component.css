@@ -13,6 +13,10 @@
   
   .menu ul li {
     margin-right: 40px; 
+    width: 60px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 4px;
   }
   
   .menu ul li:last-child {
@@ -22,4 +26,10 @@
   .menu ul li:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .selected-item {
+    font-weight: bold;
+    color: white; 
+    background-color: #007bff;
   }

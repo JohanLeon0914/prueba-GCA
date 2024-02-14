@@ -2,7 +2,6 @@ import { AfterViewInit, Component, Input, Output } from '@angular/core';
 import { SellersService } from '../../services/sellers.service';
 import { SellerModel } from '../../types/Seller';
 import { CommonModule } from '@angular/common';
-import { EventEmitter } from 'stream';
 import { CoordinatesService } from '../../services/coordinates.service';
 import { ModalService } from '../../services/modal.service';
 
