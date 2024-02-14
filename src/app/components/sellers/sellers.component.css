@@ -1,0 +1,95 @@
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px; 
+  overflow: hidden; 
+  border: 1px solid #ccc; 
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.left-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.right-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.image-and-info {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  display: block;
+  margin-right: 15px;
+}
+
+.seller-images img {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 10%;
+}
+
+.blue-text {
+  color: blue;
+  font-size: smaller;
+}
+
+.ttitles {
+  text-align: center; 
+}
+
+.ttitles h1 {
+  font-weight: normal; 
+  font-size: 17px;
+  margin-bottom: 10px; 
+}
+
+.ttitles h3 {
+  color: blue; 
+  font-size: smaller; 
+}
+
+.images {
+  position: relative;
+}
+
+.vehicle-icon {
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 45px; 
+  height: 45px; 
+}
+
+.active {
+  color: lime;
+}
+
+.inactive {
+  color: red;
+}
+
+.create-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: darkblue;
+}

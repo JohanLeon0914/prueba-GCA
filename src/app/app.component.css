@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+  }
+  
+  .sellers-container {
+    flex: 1; 
+  }
+  
+  .map-container {
+    min-width: 75%; 
+  }

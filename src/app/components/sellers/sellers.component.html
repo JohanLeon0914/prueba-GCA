@@ -1,0 +1,51 @@
+<div class="card-list">
+  <div class="ttitles">
+    <h1>LISTADO DE LOCALIZACIONES</h1>
+    <h2 class="blue-text">Listado de dispositivos que reportan su ubicación</h2>
+  </div>
+  @for (seller of sellers; track $index) {
+  <div class="card">
+    <div class="left-section">
+      <div>{{ seller.name.toUpperCase() }}</div>
+      <div class="blue-text">{{ seller.category }}</div>
+      <div class="blue-text">Latitud: {{ seller.coordinates.latitude }}</div>
+      <div class="blue-text">Longitud: {{ seller.coordinates.longitude }}</div>
+      <div class="blue-text">Altura: {{ seller.coordinates.height }}</div>
+    </div>
+    <div class="right-section">
+      <div class="image-and-info">
+        <div class="info">
+          <div class="blue-text">{{ seller.address }}</div>
+          <div><strong>Tipo de Vehículo</strong></div>
+          <div [ngClass]="{'active': seller.isActive, 'inactive': !seller.isActive}">
+            {{ seller.isActive ? 'Activo' : 'Inactivo' }}
+          </div>
+        </div>
+        <div class="images">
+          <div class="seller-images">
+            @switch (seller.photo) { @case ('person1') {
+            <img src="/assets/person1.jpg" alt="Foto del vendedor 1" />
+            } @case ('persona2') {
+            <img src="/assets/person2.jpg" alt="Foto del vendedor 2" />
+            } @case ('persona3') {
+            <img src="/assets/person3.jpg" alt="Foto del vendedor 3" />
+            } @case ('persona4') {
+            <img src="/assets/person4.jpg" alt="Foto del vendedor 4" />
+            } @case ('persona5') {
+            <img src="/assets/person5.jpg" alt="Foto del vendedor 5" />
+            } @case ('persona6') {
+            <img src="/assets/person6.jpg" alt="Foto del vendedor 6" />
+            } }
+          </div>
+          <img
+              class="vehicle-icon"
+              [src]="'/assets/' + seller.vehicle + '.svg'"
+              alt="Icono de moto"
+            />
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+  <button class="create-button">CREAR NUEVO</button>
+</div>
