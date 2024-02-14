@@ -1,6 +1,31 @@
+<app-menu></app-menu>
+
 <div class="container">
   <div class="map-container">
-    <app-map></app-map>
+    @switch (menuItemSelected) {
+      @case ('home') {
+        <app-map></app-map>
+      }
+      @case ('page1') {
+        <div class="page1">
+          Esta es la pagina 1
+        </div>
+      }
+      @case ('page2') {
+        <div class="page2">
+          Esta es la pagina 2
+        </div>
+      }
+      @case ('page3') {
+        <div class="page3">
+          Esta es la pagina 3
+        </div>
+      }
+      @default {
+        <app-map></app-map>
+      }
+    }
+    
   </div>
   <div class="sellers-container">
     <app-sellers />

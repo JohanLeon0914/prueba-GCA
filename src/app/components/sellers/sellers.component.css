@@ -6,6 +6,9 @@
   overflow: hidden; 
   border: 1px solid #ccc; 
   padding: 10px;
+  background-color: white;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .card {

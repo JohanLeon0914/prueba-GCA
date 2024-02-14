@@ -1,8 +1,10 @@
 .container {
     display: flex;
+    background-color: #4b0082;
   }
   
   .sellers-container {
+    padding: 18px;
     flex: 1; 
   }
   
@@ -21,4 +23,37 @@
     justify-content: center;
     align-items: center;
     z-index: 100; 
+  }
+
+  .page1 {
+    width: 100%;
+    height: 100vh;
+    background-color: red; 
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 20px;
+  }
+
+  .page2 {
+    width: 100%;
+    height: 100vh;
+    background-color: blue; 
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 20px;
+  }
+
+  .page3 {
+    width: 100%;
+    height: 100vh;
+    background-color: black; 
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 20px;
   }

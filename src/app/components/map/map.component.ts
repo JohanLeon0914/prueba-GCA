@@ -26,7 +26,7 @@ export class MapComponent implements AfterViewInit {
       container: this.mapDivElement.nativeElement,
       style: 'mapbox://styles/mapbox/dark-v10',
       center: [40.0, 40.0],
-      zoom: 9
+      zoom: 14
     });
     // Suscribirse a los cambios en las coordenadas
     this.coordinatesSvc.coordinatesChanged.subscribe(() => {

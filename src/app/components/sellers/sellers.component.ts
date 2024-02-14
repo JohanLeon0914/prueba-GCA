@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, Input, Output } from '@angular/core';
 import { SellersService } from '../../services/sellers.service';
 import { SellerModel } from '../../types/Seller';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,7 @@ import { ModalService } from '../../services/modal.service';
   templateUrl: './sellers.component.html',
   styleUrl: './sellers.component.css'
 })
-export class SellersComponent {
+export class SellersComponent implements AfterViewInit {
 
   sellers: SellerModel[];
 
@@ -22,6 +22,12 @@ export class SellersComponent {
 
   ngOnInit(): void {
     this.getSalesmen();
+  }
+
+  ngAfterViewInit() {
+    this.sellersService.sellersChanged.subscribe(() => {
+      this.sellers = this.sellersService.sellers
+    })
   }
   
 

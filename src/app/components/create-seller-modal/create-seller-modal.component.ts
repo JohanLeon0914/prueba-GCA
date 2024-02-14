@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SellerModel } from '../types/Seller';
-import { ModalService } from '../services/modal.service';
-import { SellersService } from '../services/sellers.service';
+import { SellerModel } from '../../types/Seller';
+import { ModalService } from '../../services/modal.service';
+import { SellersService } from '../../services/sellers.service';
 
 @Component({
   selector: 'app-create-seller-modal',
@@ -40,9 +40,10 @@ export class CreateSellerModalComponent {
         photo: sellerData.photo,
         vehicle: sellerData.vehicle
       };
-      console.log(seller)
       this.sellersSvc.createSalesman(seller).subscribe(
         createdSeller => {
+          this.sellerForm.reset();
+          this.closeModal();
           console.log('Vendedor creado:', createdSeller);
         },
         error => {
