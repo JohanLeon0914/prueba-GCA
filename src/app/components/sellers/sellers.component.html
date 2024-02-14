@@ -4,7 +4,7 @@
     <h2 class="blue-text">Listado de dispositivos que reportan su ubicación</h2>
   </div>
   @for (seller of sellers; track $index) {
-  <div class="card" (click)="sendCoordinates(seller)">
+  <div class="card" [ngClass]="{'selected-card': seller === selectedSeller}" (click)="sendCoordinates(seller)">
     <div class="left-section">
       <div>{{ seller.name.toUpperCase() }}</div>
       <div class="blue-text">{{ seller.category }}</div>

@@ -16,6 +16,7 @@ import { ModalService } from '../../services/modal.service';
 export class SellersComponent implements AfterViewInit {
 
   sellers: SellerModel[];
+  selectedSeller: SellerModel;
 
   constructor(private sellersService: SellersService, private coordinatesService: CoordinatesService, private modalSvc: ModalService) {
   }
@@ -30,7 +31,6 @@ export class SellersComponent implements AfterViewInit {
     })
   }
   
-
   getSalesmen(): void {
     this.sellersService.getSalesmen()
       .subscribe((data: SellerModel[]) => {
@@ -40,6 +40,7 @@ export class SellersComponent implements AfterViewInit {
 
   sendCoordinates(seller: SellerModel): void {
     this.coordinatesService.setCoordinates(seller);
+    this.selectedSeller = seller;
   }
 
   createModal(): void {

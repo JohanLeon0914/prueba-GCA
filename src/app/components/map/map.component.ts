@@ -31,13 +31,13 @@ export class MapComponent implements AfterViewInit {
     // Suscribirse a los cambios en las coordenadas
     this.coordinatesSvc.coordinatesChanged.subscribe(() => {
       const popup = new Popup().setHTML(`
-  <div style="padding: 10px; min-width: 145px;">
-    <image src="${this.getSellerImage(this.coordinatesSvc.sellerSelected)}" style="display: block; margin-bottom: 10px; border-radius: 10px;" />
-    <h1 style="margin-bottom: 5px;"> ${this.coordinatesSvc.sellerSelected.name} </h1>
-    <span style="display: block; margin-bottom: 5px;"> ${this.coordinatesSvc.sellerSelected.category} </span>
-    <button style="background-color: blue; color: white; border: none; border-radius: 5px; padding: 8px 16px; cursor: pointer;"> Ver </button>
-  </div>
-`);
+    <div style="padding: 10px; min-width: 145px;">
+      <image src="${this.getSellerImage(this.coordinatesSvc.sellerSelected)}" style="display: block; margin-bottom: 10px; border-radius: 10px;" />
+      <h1 style="margin-bottom: 5px;"> ${this.coordinatesSvc.sellerSelected.name} </h1>
+      <span style="display: block; margin-bottom: 5px;"> ${this.coordinatesSvc.sellerSelected.category} </span>
+      <button style="background-color: blue; color: white; border: none; border-radius: 5px; padding: 8px 16px; cursor: pointer;"> Ver </button>
+    </div>
+  `);
       // Actualizar el centro del mapa cuando cambien las coordenadas
       map.setCenter([this.coordinatesSvc.sellerSelected.coordinates.longitude, this.coordinatesSvc.sellerSelected.coordinates.latitude]);
       //Create the Marker

@@ -1,0 +1,22 @@
+@if (seller) {
+<div>
+  <h2>Detalles del Vendedor</h2>
+  <ul>
+    <li><strong>Id:</strong> {{ seller.id }}</li>
+    <li><strong>Nombre:</strong> {{ seller.name }}</li>
+    <li><strong>Categoría:</strong> {{ seller.category }}</li>
+    <li><strong>Dirección:</strong> {{ seller.address }}</li>
+    <li><strong>Activo:</strong> {{ seller.isActive ? "Sí" : "No" }}</li>
+    <li>
+      <strong>Coordenadas:</strong>
+      <ul>
+        <li>Latitud: {{ seller.coordinates.latitude }}</li>
+        <li>Longitud: {{ seller.coordinates.longitude }}</li>
+        <li>Altura: {{ seller.coordinates.height }}</li>
+      </ul>
+    </li>
+    <li><strong>Foto:</strong> {{ seller.photo }}</li>
+    <li><strong>Vehículo:</strong> {{ seller.vehicle }}</li>
+  </ul>
+</div>
+}

@@ -100,3 +100,8 @@
 .create-button:hover {
   background-color: darkblue;
 }
+
+.selected-card {
+  background-color: #f0f0f0; 
+  border: 2px solid #007bff; 
+}
