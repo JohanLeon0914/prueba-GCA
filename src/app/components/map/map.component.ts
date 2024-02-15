@@ -2,8 +2,10 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import mapboxgl, { Marker, Popup } from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 import { CoordinatesService } from '../../services/coordinates.service';
 import { SellerModel } from '../../types/Seller';
+import { UtilService } from '../../services/util.service';
+import { environment } from '../../../environments/environment';
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam9hbGVzZSIsImEiOiJjbHNscXd1YWUwYnh6MmtsOXFtaXBnbmQ2In0.jhoVfDA2A5ZGzwBOmf9-JQ';
+mapboxgl.accessToken = environment.mapboxkey;
 
 @Component({
   selector: 'app-map',
@@ -18,7 +20,7 @@ export class MapComponent implements AfterViewInit {
   latitud: number = 0
 
 
-  constructor(private coordinatesSvc: CoordinatesService) {
+  constructor(private coordinatesSvc: CoordinatesService, private utilSvc: UtilService) {
   }
 
   ngAfterViewInit(): void {
