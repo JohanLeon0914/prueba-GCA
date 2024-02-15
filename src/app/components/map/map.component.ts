@@ -26,11 +26,11 @@ export class MapComponent implements AfterViewInit {
       container: this.mapDivElement.nativeElement,
       style: 'mapbox://styles/mapbox/dark-v10',
       center: [40.0, 40.0],
-      zoom: 14
+      zoom: 14,
     });
     // Suscribirse a los cambios en las coordenadas
     this.coordinatesSvc.coordinatesChanged.subscribe(() => {
-      const popup = new Popup().setHTML(`
+        const popup = new Popup().setHTML(`
     <div style="padding: 10px; min-width: 145px;">
       <image src="${this.getSellerImage(this.coordinatesSvc.sellerSelected)}" style="display: block; margin-bottom: 10px; border-radius: 10px;" />
       <h1 style="margin-bottom: 5px;"> ${this.coordinatesSvc.sellerSelected.name} </h1>
@@ -64,6 +64,7 @@ export class MapComponent implements AfterViewInit {
       el.style.backgroundRepeat = 'no-repeat';
       el.style.backgroundSize = 'contain';
       new Marker(el).setLngLat([this.coordinatesSvc.sellerSelected.coordinates.longitude, this.coordinatesSvc.sellerSelected.coordinates.latitude]).setPopup(popup).addTo(map);
+      
     });
   }
 
