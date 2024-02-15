@@ -15,20 +15,12 @@ export class SellersService {
 
   constructor(private http: HttpClient, private utilSvc: UtilService) {
     this.loadSalesmen();
-    this.scheduleUpdate(); // Llamar a la función para programar actualizaciones
   }
 
-  private loadSalesmen() {
+  loadSalesmen() {
     this.getSalesmen().subscribe(salesmen => {
       this.sellers = salesmen;
       this.sellersSubject.next([...this.sellers]);
-    });
-  }
-
-  private scheduleUpdate() {
-    // Emitir un valor cada 1 minuto
-    interval(60000).subscribe(() => {
-      this.loadSalesmen(); // Llamar a la función para cargar los vendedores
     });
   }
 

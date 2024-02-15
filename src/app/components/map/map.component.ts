@@ -4,6 +4,8 @@ import { CoordinatesService } from '../../services/coordinates.service';
 import { SellerModel } from '../../types/Seller';
 import { UtilService } from '../../services/util.service';
 import { environment } from '../../../environments/environment';
+import { interval } from 'rxjs';
+import { SellersService } from '../../services/sellers.service';
 
 mapboxgl.accessToken = environment.mapboxkey;
 
@@ -20,7 +22,7 @@ export class MapComponent implements AfterViewInit {
   latitud: number = 0
 
 
-  constructor(private coordinatesSvc: CoordinatesService, private utilSvc: UtilService) {
+  constructor(private coordinatesSvc: CoordinatesService, private utilSvc: UtilService, private sellerSvc: SellersService) {
   }
 
   ngAfterViewInit(): void {
@@ -85,6 +87,14 @@ export class MapComponent implements AfterViewInit {
       default:
         return 'assets/person1.jpg'
     }
+  }
+
+  scheduleUpdate() {
+    // Emitir un valor cada 1 minuto
+    interval(60000).subscribe(() => {
+       // Llamar a la función para cargar los vendedores
+       this.sellerSvc.loadSalesmen()
+    });
   }
 
 }
