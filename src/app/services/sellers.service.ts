@@ -17,7 +17,7 @@ export class SellersService {
     this.loadSalesmen();
   }
 
-  loadSalesmen() {
+  private loadSalesmen() {
     this.getSalesmen().subscribe(salesmen => {
       this.sellers = salesmen;
       this.sellersSubject.next([...this.sellers]);
@@ -43,6 +43,5 @@ export class SellersService {
       })
     );
   }
-
 
 }

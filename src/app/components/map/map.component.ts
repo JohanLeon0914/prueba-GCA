@@ -21,10 +21,10 @@ export class MapComponent implements AfterViewInit {
   longitud: number = 0;
   latitud: number = 0
 
-
   constructor(private coordinatesSvc: CoordinatesService, private utilSvc: UtilService, private sellerSvc: SellersService) {
+    
   }
-
+  
   ngAfterViewInit(): void {
     const map = new mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
@@ -34,6 +34,7 @@ export class MapComponent implements AfterViewInit {
     });
     // Suscribirse a los cambios en las coordenadas
     this.coordinatesSvc.coordinatesChanged.subscribe(() => {
+      // this.markSellersCoordinates()
         const popup = new Popup().setHTML(`
     <div style="padding: 10px; min-width: 145px;">
       <image src="${this.getSellerImage(this.coordinatesSvc.sellerSelected)}" style="display: block; margin-bottom: 10px; border-radius: 10px;" />
@@ -87,14 +88,6 @@ export class MapComponent implements AfterViewInit {
       default:
         return 'assets/person1.jpg'
     }
-  }
-
-  scheduleUpdate() {
-    // Emitir un valor cada 1 minuto
-    interval(60000).subscribe(() => {
-       // Llamar a la función para cargar los vendedores
-       this.sellerSvc.loadSalesmen()
-    });
   }
 
 }
