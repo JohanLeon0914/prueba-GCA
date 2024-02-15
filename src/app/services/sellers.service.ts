@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, interval, map, switchMap, tap } from 'rxjs';
 import { SellerModel } from '../types/Seller';
 import { UtilService } from './util.service';
 
@@ -15,12 +15,20 @@ export class SellersService {
 
   constructor(private http: HttpClient, private utilSvc: UtilService) {
     this.loadSalesmen();
+    this.scheduleUpdate(); // Llamar a la función para programar actualizaciones
   }
 
   private loadSalesmen() {
     this.getSalesmen().subscribe(salesmen => {
       this.sellers = salesmen;
       this.sellersSubject.next([...this.sellers]);
+    });
+  }
+
+  private scheduleUpdate() {
+    // Emitir un valor cada 1 minuto
+    interval(60000).subscribe(() => {
+      this.loadSalesmen(); // Llamar a la función para cargar los vendedores
     });
   }
 
@@ -43,5 +51,6 @@ export class SellersService {
       })
     );
   }
+
 
 }
