@@ -1,27 +1,41 @@
-# PruebaGca
+# Prueba Técnica - GCA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+## Repositorio
 
-## Development server
+El proyecto se encuentra disponible en el siguiente repositorio público de GitHub: https://github.com/JohanLeon0914/prueba-GCA
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descripción
 
-## Code scaffolding
+Este proyecto es una aplicación desarrollada en TypeScript utilizando el framework Angular. El objetivo de esta prueba técnica es demostrar habilidades en el desarrollo de aplicaciones web utilizando Angular, consumiendo datos de una API REST, integrando un mapa de Google, y creando componentes interactivos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Desarrollador
 
-## Build
+Este proyecto fue desarrollado por Johan León.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalación y Ejecución
 
-## Running unit tests
+Para ejecutar el proyecto localmente, sigue estos pasos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona el repositorio desde [(https://github.com/JohanLeon0914/prueba-GCA)].
+2. Instala las dependencias con `npm install`.
+3. Ejecuta `ng serve` para iniciar el servidor de desarrollo.
+4. Abre tu navegador web y visita `http://localhost:4200/`.
 
-## Running end-to-end tests
+## Recursos Adjuntos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+El proyecto utiliza los recursos adjuntos proporcionados en la prueba técnica, incluyendo imágenes y datos de la API REST.
 
-## Further help
+## Funcionalidades
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Pantalla Principal**: La pantalla principal muestra un mapa de Google en la parte izquierda y una lista de vendedores disponibles en la parte derecha.
+   
+2. **Consumo de API REST**: Los datos de los vendedores se obtienen a través de la API REST proporcionada.
+   
+3. **Menú y Pestañas**: El menú ofrece varias opciones, incluyendo la opción de cambiar entre distintas pestañas. Al seleccionar la pestaña 1, el contenido de la parte izquierda cambia a otro componente diseñado por el aspirante.
+   
+4. **Seguimiento de Vendedores**: En el mapa se muestran pines para el seguimiento de los vendedores, utilizando las coordenadas proporcionadas por la API. Al hacer clic en un pin, se muestra un diálogo con el nombre del vendedor, su tipo y un botón para ver más detalles.
+   
+5. **Creación de Vendedor**: Bajo la lista de vendedores, se incluye un botón para crear un nuevo vendedor. Al presionar el botón, se abre un popup para ingresar los datos del nuevo vendedor.
+   
+6. **Actualización Programada**: Se implementa una actualización programada para realizar un seguimiento continuo de los vendedores, ya que los datos de coordenadas y actividad son diferentes cada vez que se consume la API.
+
